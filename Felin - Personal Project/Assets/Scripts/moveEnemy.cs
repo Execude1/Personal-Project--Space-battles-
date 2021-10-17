@@ -19,9 +19,9 @@ public class moveEnemy : MonoBehaviour
     {
         enemyRb.AddForce(Vector3.forward * -speed);
 
-        if(transform.position.z < zDestroy)
-        {
-            Destroy(gameObject);
-        }
+        //if(transform.position.z < zDestroy)
+        //{
+        //    Destroy(gameObject);
+        //}
     }
 }

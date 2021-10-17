@@ -10,10 +10,12 @@ public class PlayerController : MonoBehaviour
     private float zBound = 12;
     private float xBound = 43;
 
+    [SerializeField] private GameObject bullet;
+
     // Start is called before the first frame update
     void Start()
     {
-        playerRb = GetComponent<Rigidbody>();    
+        playerRb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
@@ -21,6 +23,11 @@ public class PlayerController : MonoBehaviour
     {
         MovePlayer();
         ConstrainPlayerPosition();
+
+        if(Input.GetKeyDown(KeyCode.Space))
+        {
+            Fire();
+        }
     }
 
     void MovePlayer()
@@ -66,5 +73,10 @@ public class PlayerController : MonoBehaviour
         {
             Debug.Log("Collision with " + collision.gameObject.name);
         }
+    }
+
+    void Fire()
+    {
+        Instantiate(bullet, new Vector3(transform.position.x, transform.position.y, transform.position.z + 7.5f), Quaternion.Euler(90, 0, 0));
     }
 }

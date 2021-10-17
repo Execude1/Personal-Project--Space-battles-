@@ -12,11 +12,12 @@ GameObject:
   - component: {fileID: 2947506860702644318}
   - component: {fileID: 1015945075444073679}
   - component: {fileID: -245118892165692085}
-  - component: {fileID: 3751356284894342391}
   - component: {fileID: -2791473957764755144}
+  - component: {fileID: -8991595479002943584}
+  - component: {fileID: -5774906685178820438}
   m_Layer: 0
   m_Name: Asteroid_5
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6123279987556253554}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 2, z: 0}
   m_LocalScale: {x: 124.54529, y: 124.54529, z: 124.54529}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,21 +99,8 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 118
   m_CollisionDetection: 0
---- !u!65 &3751356284894342391
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6123279987556253554}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.023176763, y: 0.019999994, z: 0.019999996}
-  m_Center: {x: -0.0011054236, y: 0, z: 0}
 --- !u!114 &-2791473957764755144
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,3 +113,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5d6f6100f2d00c48b2568444e2ffe1e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &-8991595479002943584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6123279987556253554}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3869ad0bd6d9834f8b23d54baa8ffab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!135 &-5774906685178820438
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6123279987556253554}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.011588382
+  m_Center: {x: -0.0011054236, y: 0, z: 0}
