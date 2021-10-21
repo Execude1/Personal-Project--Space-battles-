@@ -13,15 +13,11 @@ public class moveBullet : MonoBehaviour
 
     void Update()
     {
-        bulletRb.AddForce(Vector3.forward * 100);
+        bulletRb.AddForce(Vector3.forward * 100);   // полет пули
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.CompareTag("Enemy"))
-        { 
-            Destroy(collision.gameObject);
-            Destroy(gameObject);
-        }
+        
     }
 }
