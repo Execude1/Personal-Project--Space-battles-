@@ -4,31 +4,39 @@ using UnityEngine;
 
 public class BossMove : MonoBehaviour
 {
-    private bool isLeft = true;
+    [SerializeField] private bool isLeft = true;
+    private Rigidbody bossRb;
+
+    private void Start()
+    {
+        bossRb = GetComponent<Rigidbody>();
+    }
 
     void Update()
     {
         if(transform.position.z < 25)
         {
-            if(transform.position.x > -5 && isLeft)
+            if (transform.position.x >= -5 && isLeft)
             {
-                transform.Translate(Vector3.left * 2 * Time.deltaTime);
-
+                bossRb.velocity += Vector3.left * Time.deltaTime;
             }
-            else
+
+            if (transform.position.x <= -5 && isLeft)
             {
                 isLeft = false;
+                bossRb.velocity = (-1) * Vector3.zero;
             }
 
-            if (transform.position.x < 5 && !isLeft)
+            if (transform.position.x <= 5 && !isLeft)
             {
-                transform.Translate(Vector3.right * 2 * Time.deltaTime);
-
+                bossRb.velocity += Vector3.right * Time.deltaTime;
             }
-            else
+
+            if(transform.position.x >= 5 && !isLeft)
             {
                 isLeft = true;
+                bossRb.velocity = (-1) * Vector3.zero;
             }
-        }   
+        }
     }
 }

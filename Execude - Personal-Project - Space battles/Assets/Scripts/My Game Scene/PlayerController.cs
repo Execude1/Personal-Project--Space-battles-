@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         MovePlayer();
         ConstrainPlayerPosition();
@@ -35,8 +35,8 @@ public class PlayerController : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        playerRb.transform.Translate(Vector3.forward * speed * verticalInput * Time.deltaTime);
-        playerRb.transform.Translate(Vector3.right * speed * horizontalInput * Time.deltaTime);
+        playerRb.velocity = Vector3.forward * speed * verticalInput;
+        playerRb.velocity += Vector3.right * speed * horizontalInput;
     }
 
     void ConstrainPlayerPosition()
@@ -64,7 +64,7 @@ public class PlayerController : MonoBehaviour
         if (collision.gameObject.CompareTag("PowerUp"))
         {
             var powerUpTypes = collision.gameObject.GetComponent<PowerUpTypes>().powerUpTypes;
-            var powerUpSound = collision.gameObject.GetComponent<AudioSource>();
+            var playerAudioSource = GetComponent<AudioSource>();
 
             if (powerUpTypes == PowerUp.Bullet)
             {
@@ -79,7 +79,8 @@ public class PlayerController : MonoBehaviour
                 gameManager.AddScore(200);
             }
 
-            powerUpSound.PlayOneShot(powerUpSound.clip);
+            playerAudioSource.Play();
+
             Destroy(collision.gameObject);
         }
     }
