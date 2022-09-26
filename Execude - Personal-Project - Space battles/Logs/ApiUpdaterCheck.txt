@@ -419,6 +419,7 @@ C# parse time         : 407ms
 candidates check time : 78ms
 console write time    : 0ms
 
+<<<<<<< HEAD
 [api-updater (non-obsolete-error-filter)] 26.09.2022 12:56:14 : Starting C:/Program Files/Unity/Hub/Editor/2020.3.16f1/Editor/Data/Tools/ScriptUpdater/APIUpdater.NonObsoleteApiUpdaterDetector.exe
 [api-updater (non-obsolete-error-filter)] Exception caught while loading types from C:\Users\Bogda\Documents\GitHub\Personal-Project--Space-battles-\Execude - Personal-Project - Space battles\Library\ScriptAssemblies\Unity.CollabProxy.Editor.dll (some types may not be loaded)
 	Exception of type 'System.Reflection.ReflectionTypeLoadException' was thrown.
@@ -445,3 +446,5 @@ console write time    : 0ms
 
 =======
 >>>>>>> parent of cb63e7f (completed gameplay)
+=======
+>>>>>>> parent of 1da2136 (r)
