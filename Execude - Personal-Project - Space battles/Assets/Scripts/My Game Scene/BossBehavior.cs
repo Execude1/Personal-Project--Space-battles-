@@ -12,15 +12,9 @@ public class BossBehavior : MonoBehaviour
     private ParticleSystem leftFlash;
     private ParticleSystem rightFlash;
     private GameObject blueSphereObject;
-    private Rigidbody bossRb;
 
     private bool isLasersFire = true;
     private bool isBlueSphereFire = true;
-
-    [SerializeField] private ParticleSystem[] smallExplosion;
-    [SerializeField] private ParticleSystem bigExplosion;
-
-    [SerializeField] private float health = 100;
 
     void Start()
     {
@@ -28,22 +22,17 @@ public class BossBehavior : MonoBehaviour
         rightLaser = lasers[1].transform.Find("LineUp").GetComponent<ParticleSystem>();
         leftFlash = lasers[0].transform.Find("Flash").GetComponent<ParticleSystem>();
         rightFlash = lasers[1].transform.Find("Flash").GetComponent<ParticleSystem>();
-        bossRb = GetComponent<Rigidbody>();
     }
 
     void Update()
     {
         if(transform.position.z > 25)
         {
-            //transform.Translate(0, 0, -3 * Time.deltaTime);
-            bossRb.velocity += new Vector3(0, 0, -2 * Time.deltaTime);
+            transform.Translate(0, 0, -3 * Time.deltaTime);         
         }
         else
         {
-            bossRb.constraints = RigidbodyConstraints.FreezeRotation | RigidbodyConstraints.FreezePositionY | RigidbodyConstraints.FreezePositionZ;
-
-
-            if (isLasersFire)
+            if(isLasersFire)
             {
                 StartCoroutine(FireLasers());
             }
@@ -109,35 +98,12 @@ public class BossBehavior : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.tag == "Bullet")
+        if(collision.gameObject.name == "Player")
         {
-            health -= 0.2f;
-
-            Destroy(collision.gameObject);
-
-            if ((int)health % 10 == 0)
-            {
-                int numExplosion = Random.Range(0, smallExplosion.Length - 1);
-                smallExplosion[numExplosion].Play();
-            }
-
-            if (health <= 0)
-            {
-                bigExplosion.Play();
-                StartCoroutine(DestroyBoss());
-            }
+            var playerRb = collision.gameObject.GetComponent<Rigidbody>();
+            playerRb.AddForce((transform.position - playerRb.position).normalized * 100, ForceMode.Impulse);
+            //var colPlayer = collision.gameObject.transform.position;
+            //collision.gameObject.transform.position = new Vector3(colPlayer.x, colPlayer.y, colPlayer.z - 1);
         }
-    }
-
-    IEnumerator DestroyBoss()
-    {
-        bossRb.velocity = Vector3.down;
-
-        yield return new WaitForSeconds(1.5f);
-
-        Destroy(gameObject);
-
-        GameManager.gameManager.AddScore(1000);
-        GameUIManager.gameUIManager.VictoriousEnd();
     }
 }
