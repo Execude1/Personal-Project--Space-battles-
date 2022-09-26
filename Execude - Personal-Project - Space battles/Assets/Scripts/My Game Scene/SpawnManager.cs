@@ -40,8 +40,11 @@ public class SpawnManager : MonoBehaviour
 
     void SpawnEnemy()
     {
-        int randomEnemy = Random.Range(0, enemiesStandard.Length);
-        Instantiate(enemiesStandard[randomEnemy], RandomEnemyPosition(), enemiesStandard[randomEnemy].gameObject.transform.rotation);
+        if(!isBossWave)
+        {
+            int randomEnemy = Random.Range(0, enemiesStandard.Length);
+            Instantiate(enemiesStandard[randomEnemy], RandomEnemyPosition(), enemiesStandard[randomEnemy].gameObject.transform.rotation);
+        }     
 
         if (playerControllerScript.delayFire <= 0.2 && powerUps.Count == 3)
         {

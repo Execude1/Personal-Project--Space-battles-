@@ -12,10 +12,11 @@ GameObject:
   - component: {fileID: 2354102088475778594}
   - component: {fileID: 2346022541859863574}
   - component: {fileID: 2368267669708099379}
+  - component: {fileID: 2368267669708099378}
   - component: {fileID: 2368267669708099376}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Player
-  m_TagString: Player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -98,8 +99,21 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 116
+  m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!65 &2368267669708099378
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2366663288890210114}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 9.865558, y: 4.241986, z: 11.309124}
+  m_Center: {x: 0.00000047683716, y: -0.000006198883, z: -0.0000009536743}
 --- !u!114 &2368267669708099376
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,10 +126,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5386a61d6544f844db72dd256037c881, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 45
-  delayFire: 0.5
-  bullet: {fileID: 1802142487431352085, guid: 7b56730e85fb99c4da0a269a5080c106, type: 3}
-  gameManager: {fileID: 0}
+  speed: 40
+  bullet: {fileID: 2445839151234434752, guid: 725b26acb8fcfa04a9ae435e6bd40fa4, type: 3}
 --- !u!1 &2366751278954843440
 GameObject:
   m_ObjectHideFlags: 0
@@ -126,7 +138,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2365431000904826536}
   - component: {fileID: 2320694736583979746}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Collider7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -170,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2363784108225652434}
   - component: {fileID: 2320773672425867458}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Collider6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +226,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2365110657409859758}
   - component: {fileID: 2322234664128901470}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Collider1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,8 +258,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 5.6243014, y: 2.4092445, z: 10.719028}
-  m_Center: {x: 0.23938966, y: -0.33005524, z: 0.85951424}
+  m_Size: {x: 1, y: 0.7, z: 9}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2367057108548533174
 GameObject:
   m_ObjectHideFlags: 0
@@ -258,7 +270,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2363688567169573150}
   - component: {fileID: 2322290982458551226}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Collider2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -302,7 +314,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2365115445576462424}
   - component: {fileID: 2322355849538806820}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Collider3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -346,7 +358,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2365053111924097466}
   - component: {fileID: 2320519635312992106}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Collider4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -389,7 +401,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2365400774180871724}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Collider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -427,7 +439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2363479302879534096}
   - component: {fileID: 2320968728555964130}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Collider5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
